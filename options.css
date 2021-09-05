@@ -1,0 +1,142 @@
+*{
+	margin: 0;
+	padding: 0;
+	transition-duration: .4s;
+	box-sizing: border-box;
+	font-family: Arial;
+	font-size: 14px;
+}
+body{
+	background-color: #F8F9FA;
+}
+.main_container{
+	width: 100%;
+	background-color: #F8F9FA;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	padding-bottom: 100px;
+}
+.top_header_options{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.top_header_left_bg{
+	background-image: url(calender.png);
+	width: 80px;
+	height: 80px;
+	background-size: cover;
+}
+.top_header_right_bg{
+	padding-left: 20px;
+}
+.top_header_right_bg p{
+	font-size: 12px;
+}
+.top_header_right_bg h1{
+	font-size: 25px;
+}
+.main_section_main{
+	margin-top: 12px;
+}
+.navigator_day_options{
+	/*background-color: red;*/
+
+}
+.navigator_day_options ul{
+	display: flex;
+	list-style: none;
+	justify-content: center;
+}
+.navigator_day_options ul li{
+	padding: 8px 16px 8px 16px;
+	margin: 4px;
+	/*background-color: green;*/
+	cursor: pointer;
+}
+.navigator_day_options ul li:hover{
+	text-decoration: underline;
+}
+.form_container_main{
+	margin-top: 40px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.single_div_form{
+	/*background-color: #ddd;*/
+	padding: 12px;
+}
+input{
+	padding: 5px 10px 5px 10px;
+	border-radius: 2px;
+	border: 1px solid #aaa;
+}
+input[type="text"] {
+	width: 300px;
+}
+input[type="url"] {
+	width: 300px;
+}
+label{
+	padding-right: 12px;
+}
+.submit_btn_options{
+	text-align: center;
+	margin-top: 20px;
+	padding: 6px 22px 6px 22px;
+	cursor: pointer;
+}
+.active_link_options_days{
+	text-decoration: underline;
+}
+
+.container_old_tables{
+	/*background-color: red;*/
+	/*display: flex;*/
+	/*flex-wrap: wrap;*/
+
+	width: 90%;
+	/*background-color: red;*/
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 12px;
+
+	display: flex;
+
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding-bottom: 40px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.single_old_table_main{
+	min-width: 380px;
+	margin: 5px 10px 5px 10px;
+
+	background-color: rgba(255,255,255,.9);
+	box-shadow: 2px 4px 4px rgba(0,0,0,.4);
+	border-radius: 2px;
+	padding: 10px 20px 10px 20px;
+	line-height: 26px;
+	font-size: 12px;
+}
+.card_head{
+	font-weight: bold;
+	font-size: 12px;
+}
+.link{
+	text-decoration: underline;
+	font-weight: bold;
+	cursor: pointer;
+	font-size: 12px;
+}
+.single_old_table_main button{
+	margin-top: 10px;
+	cursor: pointer;
+	padding: 4px 10px 4px 10px;
+}
+.bold_font{
+	font-weight: bold;
+}

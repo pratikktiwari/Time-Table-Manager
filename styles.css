@@ -1,0 +1,100 @@
+/*reset font size to normalize in all browsers*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial;
+}
+h1{
+	font-size: 25px;
+}
+h5{
+	font-size: 10px;
+}
+h3{
+	font-size: 14px;
+}
+.single_lecture_top_row h4{
+	font-size: 12px;
+}
+.subject_full_name{
+	font-size: 12px;
+}
+.open_link_copy_link button{
+	font-size: 12px;
+}
+
+
+body{
+	min-width: 400px;
+	padding: 8px;
+	max-width: 450px;
+	overflow-x: hidden;
+}
+.top_most_header{
+	/*background-color: red;*/
+	width: 100%;
+	display: flex;
+	margin-bottom: 4px;
+}
+.left_top_header{
+	margin-left: 20px;
+	background-image: url(calender.png);
+	background-size: cover;
+	overflow: hidden;
+	width: 60px;
+	height: 60px;
+}
+.description_top_header_right{
+	/*display: flex;*/
+	padding-left: 50px;
+	line-height: 20px;
+	padding-top: 20px;
+}
+.description_top_header_right h3{
+	padding-top: 4px;
+}
+.second_row_next_top{
+	margin-top: 8px;
+	padding: 5px 10px 10px 10px;
+}
+.todays_lectures{
+	margin-top: 10px;
+}
+.single_lecture_main_parent{
+	margin-top: 10px;
+	background-color: rgba(0,0,0,.08);
+	padding: 10px;
+	border-radius: 2px;
+}
+.header_all_tables{
+	padding-bottom: 10px;
+}
+.single_lecture_h4{
+	font-weight: normal;
+	text-align: left;
+}
+.single_lecture_top_row{
+	display: flex;
+	justify-content: space-between;
+}
+.subject_full_name{
+	margin-bottom: 4px;
+	font-weight: bold;
+}
+.open_link_copy_link{
+	margin-top: 12px;
+	text-align: right;
+}
+.open_link_copy_link button{
+	padding: 4px 8px 4px 8px;
+	margin: 4px;
+	border: 0;
+	background-color: transparent;
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.open_link_copy_link a{
+	color: #000;
+}

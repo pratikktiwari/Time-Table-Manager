@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "Time Table Viewer & Manager",
+  "description": "Never forget the link of online classes; Managing time table made easier.",
+  "version": "1.0",
+
+  "icons": { "16": "icon16.png",
+           "48": "icon48.png",
+           "32":"icon32.png",
+          "128": "icon128.png" },
+
+  "browser_action": {
+  "default_popup": "popup.html",
+   "options_ui": {
+      "page": "options.html",
+      "open_in_tab": false
+    }
+  },
+  "permissions": [
+     "storage"
+   ]
+}

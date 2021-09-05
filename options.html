@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Options | Time Table editor</title>
+	<link rel="stylesheet" type="text/css" href="options.css">
+</head>
+<body>
+	<div class="main_container">
+		<nav class="top_header_options">
+			<div class="top_header_left_bg"></div>
+			<div class="top_header_right_bg">
+				<h1>Time Table Manager</h1>
+				<p>
+					A flexible time table manager for online classes. Made for both students and teachers.
+				</p>
+			</div>
+		</nav>
+		<div class="main_section_main">
+				
+			<nav class="navigator_day_options">
+				<ul>
+					<li id="options_day_monday">Monday</li>
+					<li id="options_day_tuesday">Tuesday</li>
+					<li id="options_day_wednsday">Wednsday</li>
+					<li id="options_day_thursday">Thursday</li>
+					<li id="options_day_friday">Friday</li>
+					<li id="options_day_saturday">Saturday</li>
+					<li id="options_day_sunday">Sunday</li>
+				</ul>	
+			</nav>
+
+			<hr/>
+			<h1 style="text-align: center;font-size: 24px;padding: 30px;text-transform: capitalize;" id="which_day_routine"></h1>
+			<div class="container_old_tables" id="container_old_tables">
+
+				<!-- <div class="single_old_table_main">
+					<div class="link">Cyber Security Essentials</div>
+					<div><span class="card_head">Code: </span>INT 203</div>
+					<div><span class="card_head">Time:</span>10:0 AM - 11:0 AM</div>
+					<div><span class="card_head">Roll:</span> A06</div>
+					<div><span class="card_head">Section:</span> K18HA</div>
+					<div class="link">https://meet.google.com/wdje-sds-sd</div>
+					<button>Delete</button>
+				</div> -->
+				
+
+
+
+			</div>
+
+			<div class="form_container_main" id="form_container_main">
+
+				<h1 style="text-align: left;font-size: 24px;padding: 30px 0 30px 0;">Add New Item</h1>
+
+				<form method="post" id="main_add_form">
+					
+					<div class="single_div_form">
+						<div style="margin-bottom: 10px;font-weight: bold;">
+							Class Timing
+						</div>
+						<label>From</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="time" name="from_time" required="required">
+
+						<label style="margin-left: 20px;">To</label>
+						<input type="time" name="to_time" required="required">
+					</div>
+
+					<div class="single_div_form">
+						<label>Subject Code</label>&nbsp;
+						<input type="text" name="subject_code" placeholder="e.g. INT-242" required="required">
+					</div>
+
+					<div class="single_div_form">
+						<label>Subject Name</label>
+						<input type="text" name="subject_name" placeholder="e.g. Cyber Security Essentials" required="required">
+					</div>
+
+					<div class="single_div_form">
+						<label>Roll Number</label>&nbsp;&nbsp;
+						<input type="text" name="subject_roll" placeholder="fill roll if student/ 0 if teacher" required="required">
+					</div>
+
+					<div class="single_div_form">
+						<label>Section</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="text" name="subject_section" placeholder="e.g. RK18HA" required="required">
+					</div>
+
+					<div class="single_div_form">
+						<label>Link</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="url" name="subject_link" placeholder="e.g. https://meet.google.com/ran-dom-link" required="required">
+					</div>
+
+					<div class="single_div_form">
+						<button class="submit_btn_options" id="submit_btn_options">SUBMIT</button>
+					</div>
+
+				</form>
+				<h5 id="warning_end_form"></h5>
+
+			</div>
+
+		</div>
+
+
+	</div>
+	<script type="text/javascript" src="options.js"></script>
+</body>
+</html>
