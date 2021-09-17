@@ -51,14 +51,12 @@ document.addEventListener('DOMContentLoaded', function() {
 	//get already present data
 	chrome.storage.local.get(['time_table'], function(result) {
 
-		// alert(result.time_table+"New time_table");
 		
 		const json_parsed = JSON.parse(result.time_table);
 		const today_array_of_objects = json_parsed[today_];
 
 		chrome.tabs.getSelected(null, function(tab) {
 			let main_parent = document.getElementById('container_old_tables');
-			// alert("in here");
 			for(let i=0; i<today_array_of_objects.length; i++){
 
 				let single_old_table_main = document.createElement("div");
@@ -102,8 +100,6 @@ document.addEventListener('DOMContentLoaded', function() {
 				sub_section_p.innerHTML+= today_array_of_objects[i]['section']
 				single_old_table_main.appendChild(sub_section_p);
 
-				// <div class="link">https://meet.google.com/wdje-sds-sd</div>
-				// 	<button>Delete</button>
 				let sub_link = document.createElement("div");
 				sub_link.setAttribute("class","link");
 				sub_link.innerHTML = today_array_of_objects[i]['link']
@@ -116,14 +112,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 				del_btn.onclick = function(){ 
 					single_old_table_main.style.display = "none";
-
-					//removed from dom
 					//remove from array
 					chrome.storage.local.get(['time_table'], function(result) {
 			        	var parsed_ = JSON.parse(result.time_table);
 			        	//filter
 			        	const _new_data_all = {...parsed_, 
-			        		// [today_]:[...parsed[today_],new_data_from_form]
 			        		[today_]:parsed_[today_].filter((item,index)=>index!==i)
 			        	}
 			        	chrome.storage.local.set({'time_table':JSON.stringify(_new_data_all)},function(){
@@ -154,8 +147,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		let subject_section = document.querySelector('input[name=subject_section]').value;
 		let subject_link = document.querySelector('input[name=subject_link]').value;
 
-		// alert(from_time+","+to_time+","+subject_code+","+subject_link);
-
 		if (subject_code.length>20 || subject_name.length>50 || subject_roll.length>10 || subject_section.length>15 || subject_link.length>50) {
 			let el = document.getElementById('warning_end_form');
 			el.style.color='red';
@@ -172,7 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			//append result to json in case it is being added
 			event.preventDefault();
 			return false;
-			// alert('a')
 
 		}
 		else{
@@ -214,88 +204,15 @@ document.addEventListener('DOMContentLoaded', function() {
 	        	chrome.storage.local.set({'time_table':JSON.stringify(new_data_all)},function(){
 				});
 
-	        })
-			
-
-			// let main_parent = document.getElementById('container_old_tables');
-
-			// let single_old_table_main = document.createElement("div");
-			// single_old_table_main.setAttribute("class","single_old_table_main");
-
-
-			// let sub_name = document.createElement("div");
-			// sub_name.setAttribute("class","link");
-			// sub_name.innerHTML = new_data_from_form['sub_name']
-			// single_old_table_main.appendChild(sub_name);
-
-			// let sub_code_p = document.createElement("div");
-			// let sub_code_span = document.createElement("span");
-			// sub_code_span.setAttribute("class","card_head");
-			// sub_code_span.innerHTML = "Code: ";
-			// sub_code_p.appendChild(sub_code_span);
-			// sub_code_p.innerHTML+= new_data_from_form['sub_code'];
-			// single_old_table_main.appendChild(sub_code_p);
-
-			// let sub_time_p = document.createElement("div");
-			// let sub_time_span = document.createElement("span");
-			// sub_time_span.setAttribute("class","card_head");
-			// sub_time_span.innerHTML = "Time: ";
-			// sub_time_p.appendChild(sub_time_span);
-			// sub_time_p.innerHTML+=  new_data_from_form['from'] +" - "+new_data_from_form['to'];
-			// single_old_table_main.appendChild(sub_time_p);
-
-			// let sub_roll_p = document.createElement("div");
-			// let sub_roll_span = document.createElement("span");
-			// sub_roll_span.setAttribute("class","card_head");
-			// sub_roll_span.innerHTML = "Roll: ";
-			// sub_roll_p.appendChild(sub_roll_span);
-			// sub_roll_p.innerHTML+= new_data_from_form['roll_number'];
-			// single_old_table_main.appendChild(sub_roll_p);
-
-			// let sub_section_p = document.createElement("div");
-			// let sub_section_span = document.createElement("span");
-			// sub_section_span.setAttribute("class","card_head");
-			// sub_section_span.innerHTML = "Section: ";
-			// sub_section_p.appendChild(sub_section_span);
-			// sub_section_p.innerHTML+= new_data_from_form['section']
-			// single_old_table_main.appendChild(sub_section_p);
-
-			// // <div class="link">https://meet.google.com/wdje-sds-sd</div>
-			// // 	<button>Delete</button>
-			// let sub_link = document.createElement("div");
-			// sub_link.setAttribute("class","link");
-			// sub_link.innerHTML = new_data_from_form['link']
-			// single_old_table_main.appendChild(sub_link);
-
-			// let del_btn = document.createElement("button");
-			// del_btn.innerHTML = "Delete";
-			// single_old_table_main.appendChild(del_btn);
-
-			// main_parent.appendChild(single_old_table_main);
-					
-			// // add delete event	
-			// del_btn.onclick = function(){ alert('blah'); };
-
-			
+	        })	
 			window.alert("Added to time table");
 			sleep(500).then(() => {
-			    // Do something after the sleep!
 			    window.location.reload();
 			});
 			event.preventDefault();
 		}
-		
-
 	})
 });
-
-
-// assign each item an id => to make it easy to delete particular single_item
-// call function on delete click => pass id of the single_item as param
-// remove item from dom => id.display = none
-// remove the stuff from local storage in some way
-
-// elemm.onclick = function(){ alert('blah'); };
 
 function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
